@@ -1,0 +1,32 @@
+﻿@model pageValue
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center" style="background-image: url('~/Views/bg.jpg');">
+    <h1 class="display-4" style="color:white">Secret Santa is here</h1>
+
+    @{
+        using (Html.BeginForm("Generate", "Home", FormMethod.Post, new { id = "id", enctype = "multipart/form-data" }))
+        {
+        <span style="color:white">
+            @Html.Label("Name")
+        </span>
+        <span style="color:white">
+            @Html.TextBoxFor(m => m.Name, new { id = "name" })
+        </span>
+        <span style="color:white">
+            @Html.Label("Password")
+        </span>
+        <span style="color:white">
+            @Html.TextBoxFor(m => m.Password, new { id = "password" })
+        </span>
+        <br>
+        <br>
+        <span>
+            <input type="submit" id="save" name="generate" value="generate" />
+        </span>
+                }
+                }
+
+</div>

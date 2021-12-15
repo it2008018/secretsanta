@@ -1,0 +1,50 @@
+﻿@model pageValue
+@{
+    ViewData["Title"] = "Ho ho ho";
+}
+<h1>@ViewData["Title"]</h1>
+<body>
+    <div id="#Actual" style="background-image:url('~/Views/bg.jpg')">
+        <p>  @ViewBag.Message .</p>
+
+        @{using (Html.BeginForm("UpdateAddress", "Home", FormMethod.Post, new { id = "id", enctype = "multipart/form-data" }))
+        {
+            <span>
+                @Html.Label("Name")
+            </span>
+
+            <span>
+                @Html.TextBoxFor(m => m.Name, new { id = "name" })
+            </span>
+
+            <br>
+            <br>
+
+            <span>
+                @Html.Label("Password")
+            </span>
+
+            <span>
+                @Html.TextBoxFor(m => m.Password, new { id = "password" })
+            </span>
+
+            <br>
+            <br>
+
+            <span>
+                @Html.Label("Your Address")
+            </span>
+
+            <span>
+                @Html.TextAreaFor(m => m.Address, new { id = "Your Address" })
+            </span>
+            <br>
+            <br>
+
+            <span>
+                <input type="submit" id="updateAddress" name="updateAddress" value="updateAddress" />
+            </span>
+         }
+       }
+</body>
+
